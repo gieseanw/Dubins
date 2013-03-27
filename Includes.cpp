@@ -77,9 +77,9 @@ double ArcLength(const Point2d& _center, const Point2d& _lhs, const Point2d& _rh
   vec2.second = _rhs.second - _center.second;
 
   double theta = atan2(vec2.second, vec2.first) - atan2(vec1.second,vec1.first);
-  if (theta < -1e6 && left)
+  if (theta < -1e-6 && left)
     theta += 2.0*PI;
-  else if (theta > 1e6 && !left)
+  else if (theta > 1e-6 && !left)
     theta -= 2.0 * PI;
 
   return fabs(theta*_radius);
